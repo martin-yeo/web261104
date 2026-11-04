@@ -4,6 +4,25 @@
 const titles = ["극장판 치이카와: 인어 섬의 비밀", "암살자(들)", "실낙원", "타짜: 벨제붑의 노래", "클레이페이스"];
 const ratings = [7.4, 7.2, 8.0, 7.0, 7.5];
 const years = [2026, 2026, 2026, 2026, 2026];
+
+for(let index in titles) {
+    console.log(`영화 ${index}: ${titles[index]}`);
+}
+
+const sumsum = (num1, num2) => num1 + num2;
+
+const gugudan = dan => {
+    for(let i=1; i <=9; i++) {
+        console.log(`${dan} x ${i} = ${dan*i}`);
+    }
+}
+
+gugudan( sumsum(2, 5) );
+
+(function init() {
+    console.log("초기화 실행");
+})();
+
 let sum = 0;
 for (let i = 0; i < ratings.length; i++) {
     sum += ratings[i];
@@ -14,20 +33,20 @@ const average = sum / ratings.length;
 console.log("평균:", average);
 
 let max = ratings[0];
-let maxindex = 0;
+let maxIndex = 0;
 let count = 0;
 for (let i = 1; i < ratings.length; i++) {
     if (ratings[i] > max) {
         max = ratings[i];
-        maxindex = i;
+        maxIndex = i;
     }
     if (ratings[i] >= 8) {
         count++;
     }
 }
-// console.log("최고:", titles[maxindex], max);
+// console.log("최고:", titles[maxIndex], max);
 // console.log("8점 이상:", count + "편");
-console.log(`최고: ${titles[maxindex]} ${max}`);
+console.log(`최고: ${titles[maxIndex]} ${max}`);
 console.log(`8점 이상: ${count} 편`);
 
 for (let i = 0; i < titles.length; i++) {
@@ -46,7 +65,7 @@ for (let i = 0; i < titles.length; i++) {
 
 const avgText = average.toFixed(1);
 const best = titles[maxIndex];
-alert(`내 영화 ${titles.length}편, 평균 ${avgText}점, 최고는 ${best}`);
+alert(`내 영화 ${titles.length}편, 평균 ${avgText}점, 최고는 ${best}(${ratings[maxIndex]}점)`);
 
 
 
